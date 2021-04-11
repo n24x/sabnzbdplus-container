@@ -21,9 +21,6 @@ RUN \
 	useradd -s /bin/bash sabnzbd 
 	
 USER sabnzbd
-
 EXPOSE 8080 
-
 ENTRYPOINT ["/usr/bin/sabnzbdplus"]
-
 CMD ["--browser","0","--console","--server",":8080"]
