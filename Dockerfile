@@ -12,10 +12,9 @@ apt update && \
 apt-get -y install sabnzbdplus unzip && \
 apt clean && \
 rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* && \
-useradd -d /mnt/sabnzbd_data sabnzbd  
+mkdir /mnt/data
 	
 	
-USER sabnzbd
 EXPOSE 8080 
-ENTRYPOINT ["/usr/bin/sabnzbdplus"]
-CMD ["--config-file","/mnt/sabnzbd_data","--browser","0","--console","--server",":8080"]
+#ENTRYPOINT ["/usr/bin/sabnzbdplus"]
+CMD ["/usr/bin/sabnzbdplus", "--config-file","/mnt/data","--browser","0","--console","--server",":8080"]
